@@ -321,7 +321,8 @@ class RaceSelectionWindow(QMainWindow):
             cmd += ["--round", str(round_no)]
         if flag:
             cmd.append(flag)
-
+        if "--verboseapi" in sys.argv:
+            cmd.append("--verboseapi")
         # Show a modal loading dialog and load the session in a background thread.
         dlg = QProgressDialog("Loading session data...", None, 0, 0, self)
         dlg.setWindowTitle("Loading")
